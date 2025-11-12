@@ -12,12 +12,12 @@
 <body>
     <header class="header">
         <nav class="header__menu">
-            <a class="header__menu__link" href="index.html">Home</a>
-            <a class="header__menu__link" href="about.html">About me</a>
-            <a class="header__menu__link" href="projects.html">Projects</a>
-            <a class="header__menu__link" href="hobbies.html">Hobbies</a>
+            <a class="header__menu__link" href="/">Home</a>
+            <a class="header__menu__link" href="/about">About me</a>
+            <a class="header__menu__link" href="/projects">Projects</a>
+            <a class="header__menu__link" href="/hobbies">Hobbies</a>
             <div class="mode">
-                <span class="change"><img id="darkicon" src="assets/darkmode.png" alt="toggle dark mode"></span>
+                <span class="change"><img id="darkicon" src="../static/images/darkmode.png" alt="toggle dark mode"></span>
             </div>
         </nav>
     </header>
@@ -25,19 +25,24 @@
         <section class="presentation__content">
             <h1 class="presentation__content__title">Hobbies</h1>
             <div>    
-                <p class="presentation__content__text">I am also a musician, and a proud songwriter. You can check my song on youtube here:</p>
+                <p class="presentation__content__text">I am a musician, and a proud songwriter. You can check my songs on youtube here:</p>
             </div>
             <div class="video">
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/u3JOT2SHrrs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+            <div class="video">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/HYgibWp6gww?si=SbHI_qnvYV2XVs5M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            </div>
+                    <p class="presentation__content__text">I am also a podcaster. You can check the episodes I hosted/directed here:</p>
+            <div id='buzzsprout-large-player'></div><script type='text/javascript' charset='utf-8' src='https://www.buzzsprout.com/2383695.js?container_id=buzzsprout-large-player&player=large'></script>
         </section>
         <div class="presentation__image__wrapper">
-            <img class="presentation__image" src="assets/sbgblue2.png" alt="Image of Elder Ramos">         
-        </div>
-    </main>
+            <img class="presentation__image" src="{{ url_for('static', filename='images/perfil.png') }}" alt="Image of Elder Ramos">         
+        </main>
 
     <footer class="footer">
-        <p>Developed by Elder Ramos, 2024.</p>
+        <p>Developed by Elder Ramos, 2025.</p>
     </footer>
 </body>
 </html>

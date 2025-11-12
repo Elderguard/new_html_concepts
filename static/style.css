@@ -180,9 +180,10 @@ body {
   }
 
 .presentation__image {
-    width: 50%;
+    width: 100%;
     padding: 0%;
     filter: drop-shadow(20px 04px 4px var(--shadow-color));
+    opacity: 90%;
 }
 
 .presentation__image__about {

@@ -12,12 +12,12 @@
 <body>
     <header class="header">
         <nav class="header__menu">
-            <a class="header__menu__link" href="index.html">Home</a>
-            <a class="header__menu__link" href="about.html">About me</a>
-            <a class="header__menu__link" href="projects.html">Projects</a>
-            <a class="header__menu__link" href="hobbies.html">Hobbies</a>
+            <a class="header__menu__link" href="/">Home</a>
+            <a class="header__menu__link" href="/about">About me</a>
+            <a class="header__menu__link" href="/projects">Projects</a>
+            <a class="header__menu__link" href="/hobbies">Hobbies</a>
             <div class="mode">
-                <span class="change"><img id="darkicon" src="assets/darkmode.png" alt="toggle dark mode"></span>
+                <span class="change"><img id="darkicon" src="../static/images/darkmode.png" alt="toggle dark mode"></span>
             </div>
         </nav>
     </header>
@@ -36,7 +36,7 @@
             </div>
 
             <div>
-                <a class="presentation__content__links__link" href="/Portfolio/certifications/certifications.html" target="_blank">List of Certifications</a>
+                <a class="presentation__content__links__link" href="/certifications" target="_blank">List of Certifications</a>
             </div>
             <div>
                 <p class="presentation__content__links__subtitle">Softwares</p>
@@ -56,12 +56,12 @@
             </div>
         </section>
         <div class="presentation__image__wrapper">
-            <img class="presentation__image" src="assets/sbgblue2.png" alt="Image of Elder Ramos">         
-        </div>      
+            <img class="presentation__image" src="{{ url_for('static', filename='images/perfil.png') }}" alt="Image of Elder Ramos">         
+        </div>    
     </main>
 
     <footer class="footer">
-        <p>Developed by Elder Ramos, 2024.</p>
+        <p>Developed by Elder Ramos, 2025.</p>
     </footer>
 </body>
 </html>

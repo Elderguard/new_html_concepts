@@ -18,6 +18,10 @@ def hobbies():
 def projects():
     return render_template('projects.html')
 
+@app.route("/certifications")
+def certifications():
+    return render_template('certifications.html')
+
 def main():
     app.run()
 
