@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications</title>
-    <script src="{{ url_for('static', filename='darktoggle.js')}}" type="module"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% extends "base.html" %}
 
-</head>
-<body>
-    <header class="header">
-        <nav class="header__menu">
-            <a class="header__menu__link" href="/">Home</a>
-            <a class="header__menu__link" href="/about">About me</a>
-            <a class="header__menu__link" href="/projects">Projects</a>
-            <a class="header__menu__link" href="/hobbies">Hobbies</a>
-            <div class="mode">
-                <span class="change"><img id="darkicon" src="../static/images/darkmode.png" alt="toggle dark mode"></span>
-            </div>
-        </nav>
-    </header>
+{% block title %}Portfolio - Certifications{% endblock %}
+
+{% block content %}
     <main class="presentation">
         <section class="presentation__content">
             <h1 class="presentation__content__title">CERTIFICATIONS</h1>
@@ -156,8 +138,4 @@
             <img class="presentation__image" src="{{ url_for('static', filename='images/perfil.png') }}" alt="Image of Elder Ramos">         
         </div> 
     </main>
-    <footer class="footer">
-        <p>Developed by Elder Ramos, 2025.</p>
-    </footer>
-</body>
-</html>
+{% endblock %}
