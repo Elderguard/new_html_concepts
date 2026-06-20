@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
 
-
 :root {
 
     /* --first-color: #E8F1F2;
@@ -32,7 +31,7 @@ body {
 .header {
     padding: 2% 0 0 15%;
 }
-.header__menu {
+.header-menu {
     background-color: var(--second-color);
     padding: 10px;
     border-radius: 10px;
@@ -40,10 +39,9 @@ body {
     gap: 80px;
     filter:drop-shadow(5px 5px 4px var(--shadow-color));
     align-items: center;
-    margin-right: 10%;
 }
 
-.header__menu__link {
+.header-menu-link {
     font-family: var(--second-font);
     font-size: 1.5rem;
     font-weight: 600;
@@ -51,7 +49,7 @@ body {
     text-decoration: none;
 }
 
-.header__menu__link:hover {
+.header-menu-link:hover {
     color: var(--first-color);
 }
 
@@ -64,14 +62,14 @@ body {
     gap: 82px;
 }
 
-.presentation__content {
+.presentation-content {
     width: 50%;
     display: flex;
     flex-direction: column;
     gap: 40px; /* https://css-tricks.com/almanac/properties/g/gap/ */
 }
 
-.presentation__content__title {
+.presentation-content-title {
     font-size: 2.25rem;
     font-family: var(--main-font);
     /* -webkit-text-stroke: 0.01rem var(--fifth-color); */
@@ -83,17 +81,17 @@ body {
     -webkit-text-stroke: 0.01rem var(--fifth-color);
 }
 
-.presentation__content__text {
+.presentation-content-text {
     font-size: 1.5rem;
     font-family: var(--second-font);
 }
 
-.presentation__content__text li {
+.presentation-content-text li {
     font-size: 1.0rem;
     font-family: var(--second-font);
 }
 
-.presentation__content__text__justify {
+.presentation-content-text-justify {
     font-size: 1.5rem;
     font-family: var(--second-font);
     color: var(--fifth-color);
@@ -101,7 +99,7 @@ body {
     text-indent: 10%;
 }
 
-.presentation__content__links {
+.presentation-content-links {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,13 +107,13 @@ body {
     gap: 32px;
 }
 
-.presentation__content__links__subtitle {
+.presentation-content-links-subtitle {
     font-family: var(--main-font);
     font-weight: 400;
     font-size: 1.5rem;
 }
 
-.presentation__content__links__link {
+.presentation-content-links-link {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -133,7 +131,7 @@ body {
     filter:drop-shadow(5px 5px 4px var(--shadow-color));
 }
 
-.presentation__content__links__projects {
+.presentation-content-links-projects {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -143,7 +141,7 @@ body {
     filter:drop-shadow(5px 5px 4px var(--shadow-color));
 }
 
-.presentation__content__links__projects {
+.presentation-content-links-projects {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -160,7 +158,7 @@ body {
     background-image: radial-gradient(closest-side at 60%, var(--first-color), var(--second-color), var(--third-color) , var(--forth-color));
 }
 
-.presentation__content__links__link:hover, .presentation__content__links__projects:hover {
+.presentation-content-links-link:hover, .presentation-content-links-projects:hover {
     background-image: radial-gradient(circle, var(--forth-color), var(--third-color), var(--second-color) , var(--first-color));
     /* https://www.w3schools.com/CSSref/sel_hover.php */
 }
@@ -169,7 +167,7 @@ body {
     width: 50%;
 }
 
-.presentation__image__wrapper {
+.presentation-image-wrapper {
     width: 50%;
     height: 50%;
     border: 20px solid var(--forth-color);
@@ -180,14 +178,13 @@ body {
     filter: drop-shadow(15px 10px 4px var(--shadow-color));
   }
 
-.presentation__image {
-    width: 100%;
+.presentation-image {
+    width: 50%;
     padding: 0%;
     filter: drop-shadow(20px 04px 4px var(--shadow-color));
-    opacity: 90%;
 }
 
-.presentation__image__about {
+.presentation-image-about {
     width: 25%;
     position:fixed;
     top: 20%;
@@ -227,7 +224,6 @@ body {
 }
 
 #darkicon {
-    /* background-image: url(../templates/assets/darkmode.png); */
     width: 50px;
 }
 
@@ -263,13 +259,12 @@ body {
         padding: 10%;
     }
 
-    .header__menu {
+    .header-menu {
         justify-content: center;
         gap: 5%;
-        margin-right: 0%;
     }
 
-    .header__menu__link {
+    .header-menu-link {
         font-size: 100%;
     }
 
@@ -278,12 +273,12 @@ body {
         padding: 5%;
     }
 
-    .presentation__content {
+    .presentation-content {
         width: auto;
         position: relative;
     }
 
-    .presentation__image__wrapper {
+    .presentation-image-wrapper {
         display: flex;
         align-self: center;
         justify-content:center;
@@ -293,7 +288,7 @@ body {
       }
     
 
-    .presentation__image__about {
+    .presentation-image-about {
         display: none;
     }
 }

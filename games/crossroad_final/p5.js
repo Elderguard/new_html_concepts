@@ -15774,7 +15774,7 @@
             module.exports = _getPrototypeOf = Object.setPrototypeOf
               ? Object.getPrototypeOf
               : function _getPrototypeOf(o) {
-                  return o.__proto__ || Object.getPrototypeOf(o);
+                  return o.-proto- || Object.getPrototypeOf(o);
                 };
             return _getPrototypeOf(o);
           }
@@ -15929,7 +15929,7 @@
             module.exports = _setPrototypeOf =
               Object.setPrototypeOf ||
               function _setPrototypeOf(o, p) {
-                o.__proto__ = p;
+                o.-proto- = p;
                 return o;
               };
 
@@ -16204,9 +16204,9 @@
              * Opera 11.6+, iOS 4.2+.
              *
              * We report that the browser does not support typed arrays if the are not subclassable
-             * using __proto__. Firefox 4-29 lacks support for adding new properties to `Uint8Array`
+             * using -proto-. Firefox 4-29 lacks support for adding new properties to `Uint8Array`
              * (See: https://bugzilla.mozilla.org/show_bug.cgi?id=695438). IE 10 lacks support
-             * for __proto__ and has a buggy typed array implementation.
+             * for -proto- and has a buggy typed array implementation.
              */
             Buffer.TYPED_ARRAY_SUPPORT = typedArraySupport();
 
@@ -21817,7 +21817,7 @@
                 EmptyConstructor[PROTOTYPE] = anObject(O);
                 result = new EmptyConstructor();
                 EmptyConstructor[PROTOTYPE] = null;
-                // add "__proto__" for Object.getPrototypeOf polyfill
+                // add "-proto-" for Object.getPrototypeOf polyfill
                 result[IE_PROTO] = O;
               } else result = NullProtoObject();
               return Properties === undefined
@@ -22102,17 +22102,17 @@
 
           // `Object.setPrototypeOf` method
           // https://tc39.github.io/ecma262/#sec-object.setprototypeof
-          // Works with __proto__ only. Old v8 can't work with null proto objects.
+          // Works with -proto- only. Old v8 can't work with null proto objects.
           /* eslint-disable no-proto */
           module.exports =
             Object.setPrototypeOf ||
-            ('__proto__' in {}
+            ('-proto-' in {}
               ? (function() {
                   var CORRECT_SETTER = false;
                   var test = {};
                   var setter;
                   try {
-                    setter = Object.getOwnPropertyDescriptor(Object.prototype, '__proto__')
+                    setter = Object.getOwnPropertyDescriptor(Object.prototype, '-proto-')
                       .set;
                     setter.call(test, []);
                     CORRECT_SETTER = test instanceof Array;
@@ -22123,7 +22123,7 @@
                     anObject(O);
                     aPossiblePrototype(proto);
                     if (CORRECT_SETTER) setter.call(O, proto);
-                    else O.__proto__ = proto;
+                    else O.-proto- = proto;
                     return O;
                   };
                 })()
@@ -22563,7 +22563,7 @@
           var global = _dereq_('../internals/global');
           var setGlobal = _dereq_('../internals/set-global');
 
-          var SHARED = '__core-js_shared__';
+          var SHARED = '-core-js_shared-';
           var store = global[SHARED] || setGlobal(SHARED, {});
 
           module.exports = store;
@@ -31247,7 +31247,7 @@
           }
 
           var Browser =
-            /*#__PURE__*/
+            /*#-PURE-*/
             (function() {
               function Browser(services) {
                 var options =
@@ -31435,7 +31435,7 @@
           };
 
           var Logger =
-            /*#__PURE__*/
+            /*#-PURE-*/
             (function() {
               function Logger(concreteLogger) {
                 var options =
@@ -31557,7 +31557,7 @@
           var baseLogger = new Logger();
 
           var EventEmitter =
-            /*#__PURE__*/
+            /*#-PURE-*/
             (function() {
               function EventEmitter() {
                 _classCallCheck(this, EventEmitter);
@@ -31759,7 +31759,7 @@
           }
 
           var ResourceStore =
-            /*#__PURE__*/
+            /*#-PURE-*/
             (function(_EventEmitter) {
               _inherits(ResourceStore, _EventEmitter);
 
@@ -31983,7 +31983,7 @@
           var checkedLoadedFor = {};
 
           var Translator =
-            /*#__PURE__*/
+            /*#-PURE-*/
             (function(_EventEmitter) {
               _inherits(Translator, _EventEmitter);
 
@@ -32564,7 +32564,7 @@
           }
 
           var LanguageUtil =
-            /*#__PURE__*/
+            /*#-PURE-*/
             (function() {
               function LanguageUtil(options) {
                 _classCallCheck(this, LanguageUtil);
@@ -33057,7 +33057,7 @@
           }
 
           var PluralResolver =
-            /*#__PURE__*/
+            /*#-PURE-*/
             (function() {
               function PluralResolver(languageUtils) {
                 var options =
@@ -33177,7 +33177,7 @@
             })();
 
           var Interpolator =
-            /*#__PURE__*/
+            /*#-PURE-*/
             (function() {
               function Interpolator() {
                 var options =
@@ -33459,7 +33459,7 @@
           }
 
           var Connector =
-            /*#__PURE__*/
+            /*#-PURE-*/
             (function(_EventEmitter) {
               _inherits(Connector, _EventEmitter);
 
@@ -33887,7 +33887,7 @@
           function noop() {}
 
           var I18n =
-            /*#__PURE__*/
+            /*#-PURE-*/
             (function(_EventEmitter) {
               _inherits(I18n, _EventEmitter);
 
@@ -51646,7 +51646,7 @@
               exports.load = load;
               exports.loadSync = loadSync;
 
-              Object.defineProperty(exports, '__esModule', { value: true });
+              Object.defineProperty(exports, '-esModule', { value: true });
             });
           }.call(this, _dereq_('buffer').Buffer));
         },
@@ -52679,7 +52679,7 @@
           _dereq_('core-js/modules/es.regexp.exec');
           _dereq_('core-js/modules/es.regexp.to-string');
           _dereq_('core-js/modules/es.string.split');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -52687,7 +52687,7 @@
             _dereq_('../color/color_conversion')
           );
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } /** //stores the original hsb values
            * @module Environment
            * @submodule Environment
@@ -53512,12 +53512,12 @@
           _dereq_('core-js/modules/es.regexp.exec');
           _dereq_('core-js/modules/es.string.ends-with');
           _dereq_('core-js/modules/es.string.replace');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Environment
@@ -53986,12 +53986,12 @@
           'use strict';
           _dereq_('core-js/modules/es.array.concat');
           _dereq_('core-js/modules/es.array.map');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } /** //the functions in this file support updating the grid output
            * @module Environment
            * @submodule Environment
@@ -54168,12 +54168,12 @@
           _dereq_('core-js/modules/es.array.fill');
           _dereq_('core-js/modules/es.array.map');
           _dereq_('core-js/modules/es.number.to-fixed');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Environment
@@ -54740,12 +54740,12 @@
         function(_dereq_, module, exports) {
           'use strict';
           _dereq_('core-js/modules/es.array.concat');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } /** //the functions in this file support updating the text output
            * @module Environment
            * @submodule Environment
@@ -54970,7 +54970,7 @@
 
           _dereq_('./core/init');
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } // core
           //accessibility
           // color
@@ -55069,12 +55069,12 @@
       271: [
         function(_dereq_, module, exports) {
           'use strict';
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Color
@@ -55360,7 +55360,7 @@
             return _typeof(obj);
           }
           _dereq_('core-js/modules/es.array.map');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -55378,7 +55378,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -55410,7 +55410,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Color
@@ -55996,7 +55996,7 @@
           _dereq_('core-js/modules/es.regexp.exec');
           _dereq_('core-js/modules/es.regexp.to-string');
           _dereq_('core-js/modules/es.string.trim');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -56011,7 +56011,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -56043,7 +56043,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Color
@@ -57081,7 +57081,7 @@
             return _typeof(obj);
           }
           _dereq_('core-js/modules/es.array.fill');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -57096,7 +57096,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -57128,7 +57128,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } /**
            * @method background
            * @param {Number} gray   specifies a value between white and black
@@ -58003,7 +58003,7 @@
       275: [
         function(_dereq_, module, exports) {
           'use strict';
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.BEZIER = exports.QUADRATIC = exports.LINEAR = exports._CTX_MIDDLE = exports._DEFAULT_LEADMULT = exports._DEFAULT_TEXT_FILL = exports.WORD = exports.CHAR = exports.BOLDITALIC = exports.BOLD = exports.ITALIC = exports.NORMAL = exports.BLUR = exports.ERODE = exports.DILATE = exports.POSTERIZE = exports.INVERT = exports.OPAQUE = exports.GRAY = exports.THRESHOLD = exports.BURN = exports.DODGE = exports.SOFT_LIGHT = exports.HARD_LIGHT = exports.OVERLAY = exports.REPLACE = exports.SCREEN = exports.MULTIPLY = exports.EXCLUSION = exports.SUBTRACT = exports.DIFFERENCE = exports.LIGHTEST = exports.DARKEST = exports.ADD = exports.REMOVE = exports.BLEND = exports.UP_ARROW = exports.TAB = exports.SHIFT = exports.RIGHT_ARROW = exports.RETURN = exports.OPTION = exports.LEFT_ARROW = exports.ESCAPE = exports.ENTER = exports.DOWN_ARROW = exports.DELETE = exports.CONTROL = exports.BACKSPACE = exports.ALT = exports.AUTO = exports.HSL = exports.HSB = exports.RGB = exports.MITER = exports.BEVEL = exports.ROUND = exports.SQUARE = exports.PROJECT = exports.PIE = exports.CHORD = exports.OPEN = exports.CLOSE = exports.TESS = exports.QUAD_STRIP = exports.QUADS = exports.TRIANGLE_STRIP = exports.TRIANGLE_FAN = exports.TRIANGLES = exports.LINE_LOOP = exports.LINE_STRIP = exports.LINES = exports.POINTS = exports.BASELINE = exports.BOTTOM = exports.TOP = exports.CENTER = exports.LEFT = exports.RIGHT = exports.RADIUS = exports.CORNERS = exports.CORNER = exports.RAD_TO_DEG = exports.DEG_TO_RAD = exports.RADIANS = exports.DEGREES = exports.TWO_PI = exports.TAU = exports.QUARTER_PI = exports.PI = exports.HALF_PI = exports.WAIT = exports.TEXT = exports.MOVE = exports.HAND = exports.CROSS = exports.ARROW = exports.WEBGL = exports.P2D = exports.VERSION = void 0;
           exports.FALLBACK = exports.LABEL = exports.AXES = exports.GRID = exports._DEFAULT_FILL = exports._DEFAULT_STROKE = exports.PORTRAIT = exports.LANDSCAPE = exports.MIRROR = exports.CLAMP = exports.REPEAT = exports.NEAREST = exports.IMAGE = exports.IMMEDIATE = exports.TEXTURE = exports.FILL = exports.STROKE = exports.CURVE = void 0; /**
            * @module Constants
@@ -58770,7 +58770,7 @@
           _dereq_('core-js/modules/es.string.includes');
           _dereq_('core-js/modules/es.string.search');
           _dereq_('core-js/modules/es.string.split');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('./main'));
@@ -58784,7 +58784,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -58816,7 +58816,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Environment
@@ -59586,7 +59586,7 @@
       277: [
         function(_dereq_, module, exports) {
           'use strict';
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0; // This contains a data table used by ./fes_core.js/fesErrorMonitor().
           //
           // Note: Different browsers use different error strings for the same error.
@@ -59770,13 +59770,13 @@
           _dereq_('core-js/modules/es.string.split');
           _dereq_('core-js/modules/web.dom-collections.for-each');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../main'));
           var _internationalization = _dereq_('../internationalization');
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           function _slicedToArray(arr, i) {
             return (
@@ -61090,13 +61090,13 @@
       279: [
         function(_dereq_, module, exports) {
           'use strict';
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../main'));
           var _internationalization = _dereq_('../internationalization');
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @for p5
@@ -61281,7 +61281,7 @@
           _dereq_('core-js/modules/es.string.trim');
           _dereq_('core-js/modules/web.dom-collections.for-each');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../main'));
@@ -61296,7 +61296,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -61328,7 +61328,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           function _toConsumableArray(arr) {
             return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
@@ -61827,12 +61827,12 @@
           _dereq_('core-js/modules/es.string.match');
           _dereq_('core-js/modules/es.string.replace');
           _dereq_('core-js/modules/es.string.split');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } /** // Borrow from stacktracejs https://github.com/stacktracejs/stacktrace.js with
            * @for p5
            * @requires core
@@ -62122,7 +62122,7 @@
           _dereq_('core-js/modules/es.string.split');
           _dereq_('core-js/modules/web.dom-collections.for-each');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../main'));
@@ -62137,7 +62137,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -62169,7 +62169,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           function _classCallCheck(instance, Constructor) {
             if (!(instance instanceof Constructor)) {
@@ -62282,7 +62282,7 @@
             _setPrototypeOf =
               Object.setPrototypeOf ||
               function _setPrototypeOf(o, p) {
-                o.__proto__ = p;
+                o.-proto- = p;
                 return o;
               };
             return _setPrototypeOf(o, p);
@@ -62291,7 +62291,7 @@
             _getPrototypeOf = Object.setPrototypeOf
               ? Object.getPrototypeOf
               : function _getPrototypeOf(o) {
-                  return o.__proto__ || Object.getPrototypeOf(o);
+                  return o.-proto- || Object.getPrototypeOf(o);
                 };
             return _getPrototypeOf(o);
           }
@@ -62829,7 +62829,7 @@
              * @private
              */
             _main.default.ValidationError = (function(name) {
-              var err = /*#__PURE__*/ (function(_Error) {
+              var err = /*#-PURE-*/ (function(_Error) {
                 _inherits(err, _Error);
                 var _super = _createSuper(err);
                 function err(message, func, type) {
@@ -62845,7 +62845,7 @@
                   return _this;
                 }
                 return err;
-              })(/*#__PURE__*/ _wrapNativeSuper(Error));
+              })(/*#-PURE-*/ _wrapNativeSuper(Error));
 
               err.prototype.name = name;
               return err;
@@ -63147,7 +63147,7 @@
             }
             return _typeof(obj);
           }
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var constants = _interopRequireWildcard(_dereq_('./constants'));
@@ -63160,7 +63160,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -63220,7 +63220,7 @@
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           var _internationalization = _dereq_('./internationalization');
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
 
           /**
@@ -63307,14 +63307,14 @@
           _dereq_('core-js/modules/es.string.iterator');
           _dereq_('core-js/modules/es.string.split');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.setTranslatorLanguage = exports.currentTranslatorLanguage = exports.availableTranslatorLanguages = exports.initialize = exports.translator = void 0;
           var _i18next = _interopRequireDefault(_dereq_('i18next'));
           var _i18nextBrowserLanguagedetector = _interopRequireDefault(
             _dereq_('i18next-browser-languagedetector')
           );
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           function _classCallCheck(instance, Constructor) {
             if (!(instance instanceof Constructor)) {
@@ -63370,7 +63370,7 @@
           /**
            * This is our i18next "backend" plugin. It tries to fetch languages
            * from a CDN.
-           */ var FetchResources = /*#__PURE__*/ (function() {
+           */ var FetchResources = /*#-PURE-*/ (function() {
             function FetchResources(services, options) {
               _classCallCheck(this, FetchResources);
               this.init(services, options);
@@ -63583,12 +63583,12 @@
       286: [
         function(_dereq_, module, exports) {
           'use strict';
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('./main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @for p5
@@ -63648,7 +63648,7 @@
           _dereq_('core-js/modules/es.string.iterator');
           _dereq_('core-js/modules/web.dom-collections.for-each');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           _dereq_('./shim');
@@ -63663,7 +63663,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -63736,7 +63736,7 @@
            *                              given p5 instance
            * @param  {HTMLElement}        [node] element to attach canvas to
            * @return {p5}                 a p5 instance
-           */ var p5 = /*#__PURE__*/ (function() {
+           */ var p5 = /*#-PURE-*/ (function() {
             function p5(sketch, node, sync) {
               var _this = this;
               _classCallCheck(this, p5);
@@ -64566,12 +64566,12 @@
       288: [
         function(_dereq_, module, exports) {
           'use strict';
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('./main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module DOM
@@ -65427,7 +65427,7 @@
           }
           _dereq_('core-js/modules/es.array.index-of');
           _dereq_('core-js/modules/es.array.splice');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('./main'));
@@ -65441,7 +65441,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -65473,7 +65473,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Rendering
@@ -65683,7 +65683,7 @@
           _dereq_('core-js/modules/es.string.split');
           _dereq_('core-js/modules/es.string.trim');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('./main'));
@@ -65697,7 +65697,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -65729,7 +65729,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           function _typeof(obj) {
             if (typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol') {
@@ -66278,7 +66278,7 @@
           _dereq_('core-js/modules/es.number.to-fixed');
           _dereq_('core-js/modules/es.object.to-string');
           _dereq_('core-js/modules/es.regexp.to-string');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
           var _main = _interopRequireDefault(_dereq_('./main'));
           var constants = _interopRequireWildcard(_dereq_('./constants'));
@@ -66294,7 +66294,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -66326,7 +66326,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
 
           /**
@@ -67653,7 +67653,7 @@
 
           var _main = _interopRequireDefault(_dereq_('./main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
 
           _main.default.prototype._promisePreloads = [
@@ -67855,7 +67855,7 @@
           _dereq_('core-js/modules/es.object.to-string');
           _dereq_('core-js/modules/es.string.iterator');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('./main'));
@@ -67872,7 +67872,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -67904,7 +67904,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           function _typeof(obj) {
             if (typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol') {
@@ -68306,7 +68306,7 @@
             return _typeof(obj);
           }
           _dereq_('core-js/modules/es.array.slice');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../main'));
@@ -68324,7 +68324,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -68356,7 +68356,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Shape
@@ -69156,7 +69156,7 @@
             }
             return _typeof(obj);
           }
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../main'));
@@ -69170,7 +69170,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -69202,7 +69202,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Shape
@@ -69580,7 +69580,7 @@
       296: [
         function(_dereq_, module, exports) {
           'use strict';
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../main'));
@@ -69588,7 +69588,7 @@
           _dereq_('../friendly_errors/file_errors');
           _dereq_('../friendly_errors/validate_params');
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Shape
@@ -70164,7 +70164,7 @@
             return _typeof(obj);
           }
           _dereq_('core-js/modules/es.array.slice');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../main'));
@@ -70178,7 +70178,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -70210,7 +70210,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Shape
@@ -71497,12 +71497,12 @@
           _dereq_('core-js/modules/es.array.for-each');
           _dereq_('core-js/modules/es.object.assign');
           _dereq_('core-js/modules/web.dom-collections.for-each');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('./main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Structure
@@ -72092,12 +72092,12 @@
           _dereq_('core-js/modules/es.typed-array.to-locale-string');
           _dereq_('core-js/modules/es.typed-array.to-string');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('./main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           function _toConsumableArray(arr) {
             return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
@@ -72736,7 +72736,7 @@
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           function _toConsumableArray(arr) {
             return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
@@ -73033,12 +73033,12 @@
           _dereq_('core-js/modules/es.array.concat');
           _dereq_('core-js/modules/es.object.keys');
           _dereq_('core-js/modules/es.string.sub');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Data
@@ -73753,12 +73753,12 @@
           _dereq_('core-js/modules/web.dom-collections.for-each');
           _dereq_('core-js/modules/web.dom-collections.iterator');
           _dereq_('core-js/modules/web.url');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           function _typeof(obj) {
             if (typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol') {
@@ -77704,7 +77704,7 @@
             }
             return _typeof(obj);
           }
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -77718,7 +77718,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -77750,7 +77750,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Events
@@ -78510,12 +78510,12 @@
       305: [
         function(_dereq_, module, exports) {
           'use strict';
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Events
@@ -78938,7 +78938,7 @@
           }
           _dereq_('core-js/modules/es.array.includes');
           _dereq_('core-js/modules/es.string.includes');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -78952,7 +78952,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -78984,7 +78984,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Events
@@ -80046,12 +80046,12 @@
           'use strict';
           _dereq_('core-js/modules/es.array.includes');
           _dereq_('core-js/modules/es.string.includes');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Events
@@ -80382,7 +80382,7 @@
           _dereq_('core-js/modules/es.typed-array.subarray');
           _dereq_('core-js/modules/es.typed-array.to-locale-string');
           _dereq_('core-js/modules/es.typed-array.to-string');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0; /*global ImageData:false */
 
           /**
@@ -81086,13 +81086,13 @@
           _dereq_('core-js/modules/es.typed-array.to-locale-string');
           _dereq_('core-js/modules/es.typed-array.to-string');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           var _omggif = _interopRequireDefault(_dereq_('omggif'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           function _toConsumableArray(arr) {
             return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
@@ -81775,7 +81775,7 @@
           _dereq_('core-js/modules/es.typed-array.subarray');
           _dereq_('core-js/modules/es.typed-array.to-locale-string');
           _dereq_('core-js/modules/es.typed-array.to-string');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -81796,7 +81796,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -81828,7 +81828,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Image
@@ -82601,13 +82601,13 @@
           _dereq_('core-js/modules/es.object.to-string');
           _dereq_('core-js/modules/es.string.iterator');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           var _filters = _interopRequireDefault(_dereq_('./filters'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Image
@@ -83825,14 +83825,14 @@
         function(_dereq_, module, exports) {
           'use strict';
           _dereq_('core-js/modules/es.array.filter');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           var _filters = _interopRequireDefault(_dereq_('./filters'));
           _dereq_('../color/p5.Color');
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Image
@@ -84640,7 +84640,7 @@
           _dereq_('core-js/modules/es.typed-array.to-string');
           _dereq_('core-js/modules/web.dom-collections.iterator');
           _dereq_('core-js/modules/web.url');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -84652,7 +84652,7 @@
           _dereq_('../core/friendly_errors/file_errors');
           _dereq_('../core/friendly_errors/fes_core');
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           function _typeof(obj) {
             if (typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol') {
@@ -86674,12 +86674,12 @@
           _dereq_('core-js/modules/es.string.match');
           _dereq_('core-js/modules/es.string.replace');
           _dereq_('core-js/modules/es.string.trim');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } /**
            *  <a href="#/p5.Table">Table</a> objects store data with multiple rows and columns, much
            *  like in a traditional spreadsheet. Tables can be generated from
@@ -88051,12 +88051,12 @@
           _dereq_('core-js/modules/es.regexp.exec');
           _dereq_('core-js/modules/es.regexp.to-string');
           _dereq_('core-js/modules/es.string.split');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module IO
@@ -88424,12 +88424,12 @@
           _dereq_('core-js/modules/es.string.iterator');
           _dereq_('core-js/modules/es.string.replace');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module IO
@@ -89432,12 +89432,12 @@
           _dereq_('core-js/modules/es.math.hypot');
           _dereq_('core-js/modules/es.number.constructor');
           _dereq_('core-js/modules/es.string.includes');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Math
@@ -90356,12 +90356,12 @@
           _dereq_('core-js/modules/es.object.to-string');
           _dereq_('core-js/modules/es.reflect.construct');
           _dereq_('core-js/modules/es.regexp.to-string');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           function isNativeReflectConstruct() {
             if (typeof Reflect === 'undefined' || !Reflect.construct) return false;
@@ -90393,7 +90393,7 @@
             _setPrototypeOf =
               Object.setPrototypeOf ||
               function _setPrototypeOf(o, p) {
-                o.__proto__ = p;
+                o.-proto- = p;
                 return o;
               };
             return _setPrototypeOf(o, p);
@@ -90455,12 +90455,12 @@
       319: [
         function(_dereq_, module, exports) {
           'use strict';
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } //////////////////////////////////////////////////////////////
           // http://mrl.nyu.edu/~perlin/noise/
           // Adapting from PApplet.java
@@ -90795,7 +90795,7 @@
           _dereq_('core-js/modules/es.object.to-string');
           _dereq_('core-js/modules/es.regexp.to-string');
           _dereq_('core-js/modules/es.string.sub');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -90809,7 +90809,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -90841,7 +90841,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Math
@@ -93280,12 +93280,12 @@
       321: [
         function(_dereq_, module, exports) {
           'use strict';
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } /** // variables used for random number generators
            * @module Math
            * @submodule Random
@@ -93533,7 +93533,7 @@
             }
             return _typeof(obj);
           }
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -93547,7 +93547,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -93579,7 +93579,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Math
@@ -93949,12 +93949,12 @@
       323: [
         function(_dereq_, module, exports) {
           'use strict';
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Typography
@@ -94375,7 +94375,7 @@
           _dereq_('core-js/modules/es.array.last-index-of');
           _dereq_('core-js/modules/es.regexp.exec');
           _dereq_('core-js/modules/es.string.split');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -94394,7 +94394,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -94426,7 +94426,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Typography
@@ -94769,7 +94769,7 @@
           _dereq_('core-js/modules/es.string.iterator');
           _dereq_('core-js/modules/es.string.split');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -94783,7 +94783,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -94815,7 +94815,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           function _typeof(obj) {
             if (typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol') {
@@ -96148,12 +96148,12 @@
           _dereq_('core-js/modules/es.array.splice');
           _dereq_('core-js/modules/es.array-buffer.constructor');
           _dereq_('core-js/modules/es.object.to-string');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Data
@@ -96524,12 +96524,12 @@
           _dereq_('core-js/modules/es.object.to-string');
           _dereq_('core-js/modules/es.regexp.to-string');
           _dereq_('core-js/modules/es.string.repeat');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Data
@@ -96882,7 +96882,7 @@
           _dereq_('core-js/modules/es.string.replace');
           _dereq_('core-js/modules/es.string.split');
           _dereq_('core-js/modules/es.string.trim');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -96890,7 +96890,7 @@
           _dereq_('../core/friendly_errors/file_errors');
           _dereq_('../core/friendly_errors/fes_core');
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } /** //return p5; //LM is this a mistake?
            * @module Data
            * @submodule String Functions
@@ -97497,12 +97497,12 @@
       329: [
         function(_dereq_, module, exports) {
           'use strict';
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module IO
@@ -97688,7 +97688,7 @@
           }
           _dereq_('core-js/modules/es.array.concat');
           _dereq_('core-js/modules/es.number.to-fixed');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -97703,7 +97703,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -97735,7 +97735,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Shape
@@ -99681,7 +99681,7 @@
           _dereq_('core-js/modules/es.array.splice');
           _dereq_('core-js/modules/es.object.to-string');
           _dereq_('core-js/modules/es.regexp.to-string');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -99695,7 +99695,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -99727,7 +99727,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } /** // implementation based on three.js 'orbitControls':
            * @module 3D
            * @submodule Interaction
@@ -100307,7 +100307,7 @@
             }
             return _typeof(obj);
           }
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -100321,7 +100321,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -100353,7 +100353,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } /**
            * @method ambientLight
            * @param  {String}        value   a color string
@@ -101320,13 +101320,13 @@
           _dereq_('core-js/modules/es.string.match');
           _dereq_('core-js/modules/es.string.split');
           _dereq_('core-js/modules/es.string.trim');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           _dereq_('./p5.Geometry');
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module Shape
@@ -102004,7 +102004,7 @@
             return _typeof(obj);
           }
           _dereq_('core-js/modules/es.array.join');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -102019,7 +102019,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -102051,7 +102051,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @module 3D
@@ -103125,12 +103125,12 @@
       335: [
         function(_dereq_, module, exports) {
           'use strict';
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } /** ////////////////////////////////////////////////////////////////////////////////
            * @module 3D
            * @submodule Camera
@@ -105007,12 +105007,12 @@
         function(_dereq_, module, exports) {
           'use strict';
           _dereq_('core-js/modules/es.string.sub');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } /** //some of the functions are adjusted from Three.js(http://threejs.org)
            * @module Shape
            * @submodule 3D Primitives
@@ -105338,12 +105338,12 @@
           _dereq_('core-js/modules/es.typed-array.subarray');
           _dereq_('core-js/modules/es.typed-array.to-locale-string');
           _dereq_('core-js/modules/es.typed-array.to-string');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * @requires constants
@@ -106156,11 +106156,11 @@
         function(_dereq_, module, exports) {
           'use strict';
           _dereq_('core-js/modules/es.array.map');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
 
           _main.default.RenderBuffer = function(size, src, dst, attr, renderer, map) {
@@ -106280,7 +106280,7 @@
           _dereq_('core-js/modules/es.typed-array.to-locale-string');
           _dereq_('core-js/modules/es.typed-array.to-string');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -106295,7 +106295,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -106327,7 +106327,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * Welcome to RendererGL Immediate Mode.
@@ -106769,14 +106769,14 @@
           _dereq_('core-js/modules/es.typed-array.to-locale-string');
           _dereq_('core-js/modules/es.typed-array.to-string');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           _dereq_('./p5.RendererGL');
           _dereq_('./p5.RenderBuffer');
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           } //Retained Mode. The default mode for rendering 3D primitives
           //in WEBGL.
           var hashCount = 0;
@@ -107192,7 +107192,7 @@
           _dereq_('core-js/modules/es.typed-array.to-locale-string');
           _dereq_('core-js/modules/es.typed-array.to-string');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           var constants = _interopRequireWildcard(_dereq_('../core/constants'));
@@ -107212,7 +107212,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -107244,7 +107244,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           function _toConsumableArray(arr) {
             return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
@@ -108911,12 +108911,12 @@
           _dereq_('core-js/modules/es.object.to-string');
           _dereq_('core-js/modules/es.string.iterator');
           _dereq_('core-js/modules/web.dom-collections.iterator');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * This module defines the p5.Shader class
@@ -109600,7 +109600,7 @@
           _dereq_('core-js/modules/es.typed-array.subarray');
           _dereq_('core-js/modules/es.typed-array.to-locale-string');
           _dereq_('core-js/modules/es.typed-array.to-string');
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.default = void 0;
 
           var _main = _interopRequireDefault(_dereq_('../core/main'));
@@ -109614,7 +109614,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -109646,7 +109646,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
           /**
            * This module defines the p5.Texture class
@@ -110110,7 +110110,7 @@
             return cache;
           }
           function _interopRequireWildcard(obj) {
-            if (obj && obj.__esModule) {
+            if (obj && obj.-esModule) {
               return obj;
             }
             if (obj === null || (_typeof(obj) !== 'object' && typeof obj !== 'function')) {
@@ -110142,7 +110142,7 @@
             return newObj;
           }
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
 
           // Text/Typography
@@ -111126,11 +111126,11 @@
       346: [
         function(_dereq_, module, exports) {
           'use strict';
-          Object.defineProperty(exports, '__esModule', { value: true });
+          Object.defineProperty(exports, '-esModule', { value: true });
           exports.languages = exports.default = void 0;
           var _translation = _interopRequireDefault(_dereq_('./en/translation'));
           function _interopRequireDefault(obj) {
-            return obj && obj.__esModule ? obj : { default: obj };
+            return obj && obj.-esModule ? obj : { default: obj };
           }
 
           // Only one language is imported above. This is intentional as other languages

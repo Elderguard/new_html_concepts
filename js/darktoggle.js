@@ -12,7 +12,7 @@ function darkMode() {
     body.classList.remove('light');
     //Save in local storage the value for dark mode on
     localStorage.setItem('theme','dark');
-    document.querySelector(".change").innerHTML = "<img id='darkicon' src='./assets/darkmode.png'>";
+    document.querySelector(".change").innerHTML = '<img id="darkicon" src="./images/darkmode.png" alt="toggle dark mode">';
 
 }
 
@@ -24,7 +24,7 @@ function lightMode() {
     body.classList.add('light');
     //Save in local storage the value for dark mode off
     localStorage.setItem('theme','light');
-    document.querySelector(".change").innerHTML = "<img id='darkicon' src='./assets/lightmode.png'>";
+    document.querySelector(".change").innerHTML = '<img id="darkicon" src="./images/lightmode.png" alt="toggle dark mode">';
     
 }
 

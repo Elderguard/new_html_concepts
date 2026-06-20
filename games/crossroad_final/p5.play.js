@@ -6522,7 +6522,7 @@ canvas {
 
 	const _onmousedown = this._onmousedown;
 
-	const __onmousedown = function (btn) {
+	const -onmousedown = function (btn) {
 		this.mouse[btn]++;
 		this.mouse.active = true;
 
@@ -6547,7 +6547,7 @@ canvas {
 		if (e.button === 1) btn = 'center';
 		else if (e.button === 2) btn = 'right';
 
-		__onmousedown.call(this, btn);
+		-onmousedown.call(this, btn);
 
 		_onmousedown.call(this, e);
 	};
@@ -6555,13 +6555,13 @@ canvas {
 	const _ontouchstart = this._ontouchstart;
 
 	this._ontouchstart = function (e) {
-		__onmousedown.call(this, 'left');
+		-onmousedown.call(this, 'left');
 		_ontouchstart.call(this, e);
 	};
 
 	const _onmouseup = this._onmouseup;
 
-	const __onmouseup = function (btn) {
+	const -onmouseup = function (btn) {
 		if (this.mouse[btn] >= this.mouse.holdThreshold) {
 			this.mouse[btn] = -3;
 		} else if (this.mouse[btn] > 1) this.mouse[btn] = -1;
@@ -6588,14 +6588,14 @@ canvas {
 		if (e.button === 1) btn = 'center';
 		else if (e.button === 2) btn = 'right';
 
-		__onmouseup.call(this, btn);
+		-onmouseup.call(this, btn);
 		_onmouseup.call(this, e);
 	};
 
 	const _ontouchend = this._ontouchend;
 
 	this._ontouchend = function (e) {
-		__onmouseup.call(this, 'left');
+		-onmouseup.call(this, 'left');
 		_ontouchend.call(this, e);
 	};
 
