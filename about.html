@@ -7,19 +7,20 @@
     <title>Portfolio</title>
     <script src="./js/darktoggle.js" type="module"></script>
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
     <header class="header">
         <nav class="header-menu">
-            <div class="developer"><div class="logo"><img src="/images/R-icon.png" alt=""></div><p>Developer Portfolio</p></div>
+            <a class="developer gradient-text" href="/index.html"><div class="logo"><img src="/images/R-icon.png" alt=""></div><h2>Developer Portfolio</h2></a>
             <div class="menu-items">
                 <a class="header-menu-link" href="index.html">Home</a>
                 <a class="header-menu-link" href="about.html">About me</a>
                 <a class="header-menu-link" href="projects.html">Projects</a>
                 <a class="header-menu-link" href="hobbies.html">Hobbies</a>
                 <div class="mode">
-                    <span class="change"><img id="darkicon" src="./images/darkmode.png" alt="toggle dark mode"></span>
+                    <div class="change"><img id="darkicon" src="./images/darkmode.png" alt="toggle dark mode"></div>
                 </div><!--mode-->
             </div><!--menu-items-->
         </nav><!--header-menu-->
@@ -29,17 +30,26 @@
             <div class="leftblock">
                 <h1 class="presentation-content-title">About me</h1>
                 <div>
-                    <p class="presentation-content-text">Bachelor in Civil Engineering and graduating in Information Security, Elder Ramos is a professional of Technology and critical thinking.</p>
+                    <p class="presentation-content-text-justify">Bachelor in Civil Engineering and graduating in Information Security, Elder Ramos is a professional of Technology and critical thinking.</p>
                 </div>
                 <div>
-                    <p class="presentation-content-text">The expertise carried by this expert presently include:</p>
+                    <p class="presentation-content-text-justify">The expertise carried by this expert presently include:</p>
                 </div>
+                <div class="techstack">
+                    <p class="presentation-content-text-justify">CORE TECH STACK</p>
+                    <div class="techbubbles">
+                        <p class="circled">HTML</p>
+                        <p class="circled">CSS</p>
+                        <p class="circled">JavaScript</p>
+                        <p class="circled">Python</p>
+                        <p class="circled">PHP</p>
+                        <p class="circled">C</p>
+                        <p class="circled">C++</p>
+                        <p class="circled">Node.js</p>
+                    </div><!--techbubbles-->
+                </div><!--techstack-->
                 <div>
-                    <p class="presentation-content-links-subtitle">Languages</p>
-                    <p class="presentation-content-text">HTML, CSS, JavaScript, C, C++, Python and PHP.</p>
-                </div>
-                <div>
-                    <a class="presentation-content-links-link" href="/Portfolio/certifications/certifications.html" target="_blank">List of Certifications</a>
+                    <a class="presentation-content-links-link" href="/certifications.html" target="_blank">List of Certifications</a>
                 </div>
                 <div>
                     <p class="presentation-content-links-subtitle">Softwares</p>
@@ -72,7 +82,7 @@
     </main>
 
     <footer class="footer">
-        <p>Developed by Elder Ramos, 2024.</p>
+        <p>Developed by Elder Ramos, last update:2026</p>
     </footer>
 </body>
 </html>

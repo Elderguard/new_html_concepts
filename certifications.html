@@ -1,141 +1,177 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="./js/darktoggle.js" type="module"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-{% block title %}Portfolio - Certifications{% endblock %}
-
-{% block content %}
+</head>
+<body>
+    <header class="header">
+        <nav class="header-menu">
+            <a class="developer gradient-text" href="/index.html"><div class="logo"><img src="/images/R-icon.png" alt=""></div><h2>Developer Portfolio</h2></a>
+            <div class="menu-items">
+                <a class="header-menu-link" href="index.html">Home</a>
+                <a class="header-menu-link" href="about.html">About me</a>
+                <a class="header-menu-link" href="projects.html">Projects</a>
+                <a class="header-menu-link" href="hobbies.html">Hobbies</a>
+                <div class="mode">
+                    <div class="change"><img id="darkicon" src="./images/darkmode.png" alt="toggle dark mode"></div>
+                </div><!--mode-->
+            </div><!--menu-items-->
+        </nav><!--header-menu-->
+    </header>
     <main class="presentation">
         <section class="presentation-content">
-            <h1 class="presentation-content-title">CERTIFICATIONS</h1>
-            <h2 class="presentation-content-links-subtitle">CONCLUDED:</h2>
-            <h3 class="presentation-content-links-subtitle">Computing and programming:</h3>
-            <div>
-                <ol>
-                    <li class="presentation-content-text">Cisco Networking Academy:
-
-                        <ol>
-                            <li>
-                                Get Connected - Feb 2023.
-                            </li>
-                            <li>
-                                Introduction to Cibersecurity - Jun 2023.
-                            </li>
-                        </ol>
-                        <li class = "presentation-content-text">Alura Academy:
-                            <div>
-                                <a class="presentation-content-links-link" href="https://cursos.alura.com.br/user/elder-ramos/fullCertificate/2c1e1b50364747bab4646d03600de3e9" target="_blank">Alura School Certifications</a>
-                            </div>
+            <div class="leftblock">
+                <h1 class="presentation-content-title">CERTIFICATIONS</h1>
+                <h2 class="presentation-content-links-subtitle">CONCLUDED:</h2>
+                <h3 class="presentation-content-links-subtitle">Computing and programming:</h3>
+                <div>
+                    <ol>
+                        <li class="presentation-content-text">RNP</li>
                             <ol>
-                                <li>Linux Onboarding: using the CLI in a fast and Practical manner - Mar 2023.</li>
-                                <li>Linux I: First contact and uses of the Terminal - Mar 2023.</li>
-                                <li>HTML and CSS: Responsive websites and publishing projects - Feb 2023.</li>
-                                <li>HTML and CSS: Header, footer and CSS variables - Feb 2023.</li>
-                                <li>HTML and CSS: Classes, positioning and Flexbox - Feb 2023.</li>
-                                <li>HTML and CSS: Developer's environment, files structure and tags - Feb 2023.</li>
-                                <li>HTTP: Exploring Web - Feb 2023.</li>
-                                <li>JavaScript: Objects - Feb 2023.</li>
-                                <li>JavaScript: Arrays - Feb 2023.</li>
-                                <li>JavaScript: Object oriented programming - Jan 2023.</li>
-                                <li>JavaScript: Exploring the language - Dec 2022.</li>
-                                <li>JavaScript and HTML: Drawings, animations and games - Dec 2022.</li>
-                                <li>JavaScript: Types, variables and functions - Dec 2022.</li>
-                                <li>JavaScript and HTML: Game Development and Logic - Dec 2022.</li>
-                                <li>Git and GitHub: repository, commit and versions - Dec 2022.</li>
-                                <li>Javascript for Web: Dynamic pages - Dec 2022.</li>
-                                <li>HTML and CSS3: Advanced CSS - Dec 2022.</li>
-                                <li>HTML and CSS3: Forms and tables - Dec 2022.</li>
-                                <li>HTML and CSS3: Positioning, arrays and navigation - Nov 2022.</li>
-                                <li>HTML and CSS3: Creating Web Pages - Nov 2022.</li>
-                                <li>Hardware: Computer's Architecture - Nov 2022.</li>
-                                <li>JavaScript: Programming Logic: Loops and arrays - Aug 2022.</li>
-                                <li>JavaScript: Programming Logic and Ping Pong game - Aug 2022.</li>
+                                <li>Basic level on 'Ethical Hackers' - Jan 2024</li>
+                                <li>Fundamental level on 'Ethical Hackers' - Mar 2024</li>
+                                <li>Advanced level on 'Ethical Hackers' - Apr 2026</li>
+                            </ol>
+                        <li class="presentation-content-text">Cisco Networking Academy:
+                            <ol>
+                                <li>
+                                    Get Connected - Feb 2023.
+                                </li>
+                                <li>
+                                    Introduction to Cibersecurity - Jun 2023.
+                                </li>
+                            </ol>
+                            <li class = "presentation-content-text">Alura Academy:
+                                <div>
+                                    <a class="presentation-content-links-link" href="https://cursos.alura.com.br/user/elder-ramos/fullCertificate/2c1e1b50364747bab4646d03600de3e9" target="_blank">Alura School Certifications</a>
+                                </div>
+                                <ol>
+                                    <li>Linux Onboarding: using the CLI in a fast and Practical manner - Mar 2023.</li>
+                                    <li>Linux I: First contact and uses of the Terminal - Mar 2023.</li>
+                                    <li>HTML and CSS: Responsive websites and publishing projects - Feb 2023.</li>
+                                    <li>HTML and CSS: Header, footer and CSS variables - Feb 2023.</li>
+                                    <li>HTML and CSS: Classes, positioning and Flexbox - Feb 2023.</li>
+                                    <li>HTML and CSS: Developer's environment, files structure and tags - Feb 2023.</li>
+                                    <li>HTTP: Exploring Web - Feb 2023.</li>
+                                    <li>JavaScript: Objects - Feb 2023.</li>
+                                    <li>JavaScript: Arrays - Feb 2023.</li>
+                                    <li>JavaScript: Object oriented programming - Jan 2023.</li>
+                                    <li>JavaScript: Exploring the language - Dec 2022.</li>
+                                    <li>JavaScript and HTML: Drawings, animations and games - Dec 2022.</li>
+                                    <li>JavaScript: Types, variables and functions - Dec 2022.</li>
+                                    <li>JavaScript and HTML: Game Development and Logic - Dec 2022.</li>
+                                    <li>Git and GitHub: repository, commit and versions - Dec 2022.</li>
+                                    <li>Javascript for Web: Dynamic pages - Dec 2022.</li>
+                                    <li>HTML and CSS3: Advanced CSS - Dec 2022.</li>
+                                    <li>HTML and CSS3: Forms and tables - Dec 2022.</li>
+                                    <li>HTML and CSS3: Positioning, arrays and navigation - Nov 2022.</li>
+                                    <li>HTML and CSS3: Creating Web Pages - Nov 2022.</li>
+                                    <li>Hardware: Computer's Architecture - Nov 2022.</li>
+                                    <li>JavaScript: Programming Logic: Loops and arrays - Aug 2022.</li>
+                                    <li>JavaScript: Programming Logic and Ping Pong game - Aug 2022.</li>
+                                </ol>
+                            </li>
+                        </li>
+                        <li class="presentation-content-text">Udemy:
+                            <ol>
+                                <li>None concluded yet.</li>
                             </ol>
                         </li>
-                    </li>
-                    <li class="presentation-content-text">Udemy:
-                        <ol>
-                            <li>None concluded yet.</li>
-                        </ol>
-                    </li>
-                    <li class="presentation-content-text">Danki Code:
-                        <ol>
-                            <li>Python Complete - Dec 2023.</li>
-                        </ol>
-                    </li>
-                    <li class="presentation-content-text">Data Science Academy:
-                        <ol>
-                            <li>Python for Data Analysis and Data Science - Dec 2023.</li>
-                        </ol>
-                    </li>
-                </ol>    
-
-            </div>
-            <div>
-
-                <h3 class="presentation-content-links-subtitle">Other Certifications:</h3>
-                <ol>
-                    <li class="presentation-content-text">ENAP:
-                        <ol>
-                            <li>Government bids and purchases professional - Dec 2021.</li>
-                        </ol>
-                    </li>
-                    <li class="presentation-content-text">HSB Engenharia Eireli:
-                        <ol>
-                            <li>Extension course in Diagnostic Engineering - Aug 2021.</li>
-                        </ol>
-                    </li>
-                    <li class="presentation-content-text">Upgrade Consultoria e Treinamentos:
-                        <ol>
-                            <li>Extension Course in Evaluations of urban Property. 2020.</li>
-                        </ol>
-                    </li>
-                    <li class="presentation-content-text">Universidade Paulista:
-                        <ol>
-                            <li>5 years program Bachelor's Degree in Civil Engineering - Dec 2019.</li>
-                        </ol>
-                    </li>
-                </ol>
-            </div>
-                <h2 class="presentation-content-links-subtitle">ON-GOING:</h2>
-            <h3 class="presentation-content-links-subtitle">Computing and programming:</h3>
-            <div>
-                <ol>
-                    <li class="presentation-content-text">Udemy:
-                        <ol>
-                            <li>Ethical Hacking Fundamentals: Practical course.</li>
-                            <li>Professional Ethical Hacker with Kali Linux v2023.</li>
-                            <li>Pentest technics with Kali Linux 2023.</li>
-                            <li>VirtualBox: Creating Labs with Virtual Machines.</li>
-                        </ol>
-                    </li>
-                </ol>
-                <ol>
-                    <li class="presentation-content-text">Danki Code:
-                        <ol>
-                            <li>Git and GitHub complete</li>
-                            <li>NodeJS</li>
-                            <li>Introduction to the Metaverse</li>
-                        </ol>
-                    </li>
-                </ol>
-                <ol>
-                    <li class="presentation-content-text">RNP - Brazilian National Education and Research Network Agency:
-                        <ol>
-                            <li>Professional Ethical Hacker.</li>
-                        </ol>
-                    </li>
-                </ol>
-                <ol>
-                    <li class="presentation-content-text">FATEC - Technology Faculty.
-                        <ol>
-                            <li>3 years program Bachelor's degree.</li>
-                        </ol>
-                    </li>
-                </ol>
-            </div>
+                        <li class="presentation-content-text">Danki Code:
+                            <ol>
+                                <li>Python Complete - Dec 2023.</li>
+                                <li>Git and GitHub complete - Apr 2024</li>
+                                <li>Frontend Development - Apr 2024</li>
+                                <li>Wordpress websites - Jun 2026</li>
+                            </ol>
+                        </li>
+                        <li class="presentation-content-text">Data Science Academy:
+                            <ol>
+                                <li>Python for Data Analysis and Data Science - Dec 2023.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+                <div>
+                    <h3 class="presentation-content-links-subtitle">Other Certifications:</h3>
+                    <ol>
+                        <li class="presentation-content-text">ENAP:
+                            <ol>
+                                <li>Government bids and purchases professional - Dec 2021.</li>
+                            </ol>
+                        </li>
+                        <li class="presentation-content-text">HSB Engenharia Eireli:
+                            <ol>
+                                <li>Extension course in Diagnostic Engineering - Aug 2021.</li>
+                            </ol>
+                        </li>
+                        <li class="presentation-content-text">Upgrade Consultoria e Treinamentos:
+                            <ol>
+                                <li>Extension Course in Evaluations of urban Property. 2020.</li>
+                            </ol>
+                        </li>
+                        <li class="presentation-content-text">Universidade Paulista:
+                            <ol>
+                                <li>5 years program Bachelor's Degree in Civil Engineering - Dec 2019.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+                    <h2 class="presentation-content-links-subtitle">ON-GOING:</h2>
+                <h3 class="presentation-content-links-subtitle">Computing and programming:</h3>
+                <div>
+                    <ol>
+                        <li class="presentation-content-text">Udemy:
+                            <ol>
+                                <li>Ethical Hacking Fundamentals: Practical course.</li>
+                                <li>Professional Ethical Hacker with Kali Linux v2023.</li>
+                                <li>Pentest technics with Kali Linux 2023.</li>
+                                <li>VirtualBox: Creating Labs with Virtual Machines.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <ol>
+                        <li class="presentation-content-text">Danki Code:
+                            <ol>
+                                <li>NodeJS</li>
+                                <li>Introduction to the Metaverse</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <ol>
+                        <li class="presentation-content-text">RNP - Brazilian National Education and Research Network Agency:
+                            <ol>
+                                <li>Professional Ethical Hacker.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <ol>
+                        <li class="presentation-content-text">FATEC - Technology Faculty.
+                            <ol>
+                                <li>3 years program Bachelor's degree.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div><!--leftblock-->
+            <div class="presentation-card">
+                <div class="presentation-image-box">
+                    <div class="presentation-image">
+                        <img src="./images/Elder3.png" alt="">
+                    </div><!--presentation-image-->
+                </div><!--presentation-image-box-->
+                <div class="card-description">
+                    <p><span class="weight600">ELDER RAMOS </span>| Frontend Developer</p>
+                </div><!--card-description-->
+            </div><!--presentation-card-->
         </section>
 
-        <div class="presentation__image__wrapper">
-            <img class="presentation__image" src="{{ url_for('static', filename='images/perfil.png') }}" alt="Image of Elder Ramos">         
-        </div>
     </main>
 {% endblock %}

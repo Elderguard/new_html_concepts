@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <script src="../darktoggle-games.js" type="module"></script>
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="../../game.css">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../game.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -17,36 +17,23 @@
         <nav class="header-menu">
             <a class="developer gradient-text" href="/index.html"><div class="logo"><img src="/images/R-icon.png" alt=""></div><h2>Developer Portfolio</h2></a>
             <div class="menu-items">
-                <a class="header-menu-link" href="../../index.html">Home</a>
-                <a class="header-menu-link" href="../../about.html">About me</a>
-                <a class="header-menu-link" href="../../projects.html">Projects</a>
-                <a class="header-menu-link" href="../../hobbies.html">Hobbies</a>
+                <a class="header-menu-link" href="../../../index.html">Home</a>
+                <a class="header-menu-link" href="../../../about.html">About me</a>
+                <a class="header-menu-link" href="../../../projects.html">Projects</a>
+                <a class="header-menu-link" href="../../../hobbies.html">Hobbies</a>
                 <div class="mode">
                     <div class="change"><img id="darkicon" src="./images/darkmode.png" alt="toggle dark mode"></div>
                 </div><!--mode-->
             </div><!--menu-items-->
         </nav><!--header-menu-->
     </header>
-    <main class="container">
-        <section class="presentation-content">
-
-            <div class="container">
-                <!-- <h1 class="game_title">Crossroad Game</h1> -->
-
-                <div class="crossroad">
-
-                    <iframe id="crossroad" src="https://editor.p5js.org/Elderguard/full/sS6IrUKnI" scrolling="no"></iframe>
-
-                </div>
-            </div>
-
-        </section>
-
-    </main>
+    <main class="presentation">
+        <canvas id="canvas" width="288" height="512"></canvas>
+        <script src="/Portfolio/games/flappy_bird/flappy/Flappy bird/flappy.js"></script>
+    </main>    
 
 </body>
 <footer class="footer">
     <p>Developed by Elder Ramos, last update:2026</p>
 </footer>
-
 </html>

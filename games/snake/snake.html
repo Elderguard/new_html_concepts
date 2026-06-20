@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake</title>
-    <script src="/Portfolio/js/darktoggle.js" type="module"></script>
-    <link rel="stylesheet" href="/Portfolio/styles/style.css">
+    <title>Portfolio</title>
+    <script src="../darktoggle-games.js" type="module"></script>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
     <header class="header">
         <nav class="header-menu">
-            <a class="header-menu-link" href="../../index.html">Home</a>
-            <a class="header-menu-link" href="../../about.html">About me</a>
-            <a class="header-menu-link" href="../../projects.html">Projects</a>
-            <a class="header-menu-link" href="../../hobbies.html">Hobbies</a>
-            <div class="mode">
-                <span class="change"><img id="darkicon" src="/Portfolio/assets/darkmode.png" alt="toggle dark mode"></span>
-            </div>
-        </nav>
+            <a class="developer gradient-text" href="/index.html"><div class="logo"><img src="/images/R-icon.png" alt=""></div><h2>Developer Portfolio</h2></a>
+            <div class="menu-items">
+                <a class="header-menu-link" href="../../index.html">Home</a>
+                <a class="header-menu-link" href="../../about.html">About me</a>
+                <a class="header-menu-link" href="../../projects.html">Projects</a>
+                <a class="header-menu-link" href="../../hobbies.html">Hobbies</a>
+                <div class="mode">
+                    <div class="change"><img id="darkicon" src="./images/darkmode.png" alt="toggle dark mode"></div>
+                </div><!--mode-->
+            </div><!--menu-items-->
+        </nav><!--header-menu-->
     </header>
-    <main class="presentation">
-        <canvas id="canvas" width="400" height="400"></canvas>
-        <script src="../snake/snake.js"></script>
+    <main class="center">
+        <div class="game">
+            <canvas id="canvas" width="400" height="400"></canvas>
+            <script src="../snake/snake.js"></script>
+        </div>
     </main>    
 
 </body>
 <footer class="footer">
-    <p>Developed by Elder Ramos, 2024.</p>
+    <p>Developed by Elder Ramos, last update:2026</p>
 </footer>
 </html>

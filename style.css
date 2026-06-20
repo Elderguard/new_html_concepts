@@ -24,6 +24,12 @@ span {
     white-space: pre-wrap;
 }
 
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 body {
     background-color: #13293D;
     /*height: 100vh; vh = viewport height - removed to integrate footer*/
@@ -32,6 +38,8 @@ body {
     color: var(--fifth-color);
     background-image: linear-gradient(-135deg, var(--first-color), var(--second-color));
     width: 100%;
+    max-width: 100%;
+    font-family: 'Inter';
 }
 
 .header {
@@ -111,9 +119,14 @@ body {
     justify-content: space-between;
     gap: 82px;
 }
+.game {
+    justify-content: center;
+    padding: 10%;
+}
 
 .presentation-content {
     width: 100%;
+    max-width: 100vh;
     display: flex;
     gap: 10%; /* https://css-tricks.com/almanac/properties/g/gap/ */
     justify-content: center;
@@ -175,13 +188,14 @@ body {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    width: 50%;
+    width: auto;
     text-align: center;
-    border: 1px solid var(--glass-color);
+    text-wrap: nowrap;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 1.5rem;
     font-weight: 600;
-    padding: 21.5px 0px;
+    padding: 21.5px 10px;
     text-decoration: none;
     color: var(--fifth-color);
     font-family: var(--second-font);
@@ -205,7 +219,7 @@ body {
     gap: 2rem;
     /* width: 50%; */
     text-align: center;
-    border: 1px solid var(--glass-color);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 1.5rem;
     font-weight: 600;
@@ -254,7 +268,7 @@ body {
     width: fit-content;
     height: fit-content;
     background-color: var(--transparent-color);
-    border: 1px solid var(--glass-color);
+    border: 1px solid var(--border-color);
     border-radius: 20px;
     flex-direction: column;
     justify-content: center;
@@ -298,7 +312,7 @@ body {
     width: fit-content;
     height: fit-content;
     border-radius: 10px;
-    border: 1px solid var(--glass-color);
+    border: 1px solid var(--border-color);
 }
 
 .presentation-image {
@@ -322,6 +336,50 @@ body {
     top: 20%;
     left: 60%;
     filter: drop-shadow(20px 04px 4px var(--shadow-color));
+}
+
+.call-to-action {
+    display: flex;
+    gap: 5%;
+}
+
+.highlighted-button{
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 2rem;
+    background: var(--Gradient-color);
+    text-decoration: none;
+    color: #FEFBFEEE;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    cursor: pointer;
+    border: none;
+    width: fit-content;
+}
+
+.techstack {
+    display: flex;
+    padding: 30px 0;
+    flex-direction: column;
+}
+
+.techbubbles {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.circled {
+    display: flex;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--second-color);
+    border-radius: 1rem;
+    color: var(--fifth-color);
+    background-color: var(--transparent-color);
 }
 
 .video {
@@ -378,6 +436,7 @@ body {
     --footer-color: var(--fifth-color);
     --border-color: #FFFFFFBB;
     --transparent-color: #4d7e9b33;
+    --Gradient-color: linear-gradient(90deg, var(--third-color) 0%, var(--second-color) 50%, var(--forth-color) 100%);
 }
 
 .light {
@@ -392,11 +451,16 @@ body {
     --footer-color: var(--fifth-color);
     --border-color: #FFFFFFBB;
     --transparent-color: #FFFFFF33;
+    --Gradient-color: linear-gradient(90deg, var(--third-color) 0%, var(--second-color) 50%, var(--forth-color) 100%);
 }
 
 .game_title {
     /* margin: 40%; */
     display:inline-block;
+}
+
+#canvas {
+    justify-self: center;
 }
 
 @media (max-width: 1200px) {
