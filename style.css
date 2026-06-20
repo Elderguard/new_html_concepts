@@ -530,6 +530,10 @@ body {
         width: 90%;
     }
 
+    .leftblock {
+        width: 90%;
+    }
+
     .call-to-action a {
         text-wrap: nowrap;
     }
@@ -550,10 +554,14 @@ body {
         align-items:end;
         border-radius: 10%;
         border: 10px solid var(--forth-color);
-      }
+    }
     
 
     .presentation-image-about {
         display: none;
+    }
+
+    .footer {
+        font-size: 1rem;
     }
 }
