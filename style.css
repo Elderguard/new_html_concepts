@@ -273,6 +273,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 }
 .presentation-card::before {
     content: '';
@@ -389,6 +390,7 @@ body {
 .video iframe {
     width: 100%;
     aspect-ratio: 16 / 9;
+    border-radius: 1rem;
 }
 
 .footer {
@@ -461,6 +463,23 @@ body {
 
 #canvas {
     justify-self: center;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.websites {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.websites > .presentation-card > .card-description {
+    display: flex;
+    flex-direction: column;
 }
 
 @media (max-width: 1200px) {
